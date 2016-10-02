@@ -29,7 +29,7 @@ gen_docs() {
     fi
 
     cd engine/master/
-    cargo doc -q --no-deps -p amethyst -p amethyst_ecs -p amethyst_engine
+    cargo doc -q --no-deps -p amethyst -p amethyst_ecs -p amethyst_engine -p amethyst_renderer
     if [ $? -ne 0 ]; then
         echo "[2/3] ERROR: Failed to compile and document the \`master' branch!"
         exit 1
@@ -37,7 +37,7 @@ gen_docs() {
     cd -
 
     cd engine/develop/
-    cargo doc -q --no-deps -p amethyst -p amethyst_config -p amethyst_context -p amethyst_ecs
+    cargo doc -q --no-deps -p amethyst -p amethyst_config -p amethyst_context -p amethyst_ecs -p amethyst_renderer
     if [ $? -ne 0 ]; then
         echo "[2/3] ERROR: Failed to compile and document the \`develop' branch!"
         exit 1
@@ -47,6 +47,7 @@ gen_docs() {
     mkdir -p build/doc/
     cp -r engine/master/target/doc/ build/
     cp -r engine/develop/target/doc/ build/doc/develop/
+    echo "<meta http-equiv=refresh content=0;url=amethyst/>" > build/doc/index.html
 }
 
 gen_book() {
