@@ -47,7 +47,9 @@ gen_docs() {
     mkdir -p build/doc/
     cp -r engine/master/target/doc/ build/
     cp -r engine/develop/target/doc/ build/doc/develop/
+
     echo "<meta http-equiv=refresh content=0;url=amethyst/>" > build/doc/index.html
+    cp build/doc/index.html build/doc/develop/
 }
 
 gen_book() {
