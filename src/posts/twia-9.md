@@ -49,11 +49,11 @@ ECS libraries in Rust. See the [ecs_bench][eb] repo for more details.
 
 * Both [Specs][sp] and [GFX][gf] have been fully integrated into Amethyst,
   starting with version 0.4.0.
-* We have first light! A flexible [GFX-based renderer][p49] has been
+* We have first light! A flexible [GFX-based renderer][e49] has been
   implemented. Great job, [@csherratt][cs]!
 * Basic [YAML configuration][e61] loading has been written, courtesy of
   [@Aceeri][ac].
-* The [`amethyst_context`][e63] crate has been introduced, which holds a
+* The [amethyst_context][e63] crate has been introduced, which holds a
   collection of common resources that can be passed around different parts of
   the engine. Credit goes to [@nchashch][nc].
 * [Event handling][e67] for keyboard input and window events is now supported
@@ -90,7 +90,7 @@ ECS libraries in Rust. See the [ecs_bench][eb] repo for more details.
 
 [t25]: https://github.com/amethyst/tools/pull/25
 [t28]: https://github.com/amethyst/tools/pull/28
-[e34]: https://github.com/amethyst/issues/34
+[e34]: https://github.com/amethyst/amethyst/issues/34
 
 ### Breaking changes
 

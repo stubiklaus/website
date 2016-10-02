@@ -1,0 +1,259 @@
+/*
+ * CH01 - Global Styling
+ * CH02 - Header
+ * CH03 - Hero Image
+ * CH04 - Features
+ * CH05 - Primary Content
+ * CH06 - Secondary Content
+ * CH07 - Call To Action
+ * CH08 - Footer
+ */
+
+/* CH01 - Global Styling */
+
+* {
+    box-sizing: border-box;
+}
+
+blockquote {
+    color: gray;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+    margin: 0em;
+    padding: 0em;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40pt;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30pt;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22pt;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1em;
+}
+
+/* CH02 - Header */
+
+header nav {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+}
+
+header nav a {
+    color: white;
+    display: inline-block;
+    padding: 1em;
+    margin: 1em;
+    position: relative;
+    text-decoration: none;
+    vertical-align: center;
+}
+
+header nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+header nav a img {
+    float: left;
+    margin: -0.5em 0.5em;
+    width: 2.5em;
+}
+
+/* CH05 - Hero Image */
+
+#hero {
+    color: white;
+    text-align: center;
+}
+
+#hero a {
+    animation: hero-fade 1s linear;
+    border: solid white 2px;
+    border-radius: 5px;
+    color: white;
+    display: inline-table;
+    font-weight: 400;
+    margin: 1em;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#hero a:hover {
+    background-color: white;
+    color: purple;
+    text-decoration: none;
+}
+
+#hero h1, #hero p {
+    animation: hero-fade 1s linear;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+}
+
+#hero.community {
+    background: linear-gradient(rgba(209, 26, 255,0.0), rgba(209, 26, 255,0.45)),
+                url('/assets/night-map-earth.png');
+    background-size: cover;
+    height: 30em;
+    padding-top: 7em;
+}
+
+#hero.home {
+    background: linear-gradient(#805BA5, #BC519E);
+    height: 30em;
+    padding-top: 7em;
+}
+
+#hero.news {
+    background: linear-gradient(#805BA5, #BC519E);
+    height: 12em;
+    padding-top: 3em;
+}
+
+#hero.post {
+    background-color: #685CBB;
+    height: 5em;
+}
+
+@keyframes hero-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* CH04 - Features */
+
+#features {
+    text-align: center;
+}
+
+#features a {
+    color: #685CBB;
+    text-decoration: none;
+}
+
+#features a:hover {
+    text-decoration: underline;
+}
+
+#features ul {
+    display: inline-block;
+    list-style: none;
+	margin: 2em auto;
+}
+
+#features ul li {
+	float: left;
+    height: 14em;
+    margin-top: 1em;
+	margin-right: 2em;
+	padding-top: 7em;
+	text-align: center;
+	width: 14em;
+}
+
+#features ul li.feature-1 {
+    background: url("/assets/gears-icon.png") no-repeat top center;
+    background-size: 6em;
+}
+
+#features ul li.feature-2 {
+    background: url("/assets/code-icon.png") no-repeat top center;
+    background-size: 6em;
+}
+
+#features ul li.feature-3 {
+    background: url("/assets/rust-logo.png") no-repeat top center;
+    background-size: 6em;
+}
+
+#features ul li.feature-4 {
+    background: url("/assets/fork-logo.png") no-repeat top center;
+    background-size: 6em;
+}
+
+/* CH05 - Primary Content */
+
+#primary-content a {
+    color: #685CBB;
+    text-decoration: none;
+}
+
+#primary-content a:hover {
+    text-decoration: underline;
+}
+
+/* CH06 - Secondary Content */
+
+#secondary-content {
+    background-color: #EEEEFF;
+}
+
+/* CH07 - Call To Action */
+
+#call-to-action {
+    display: block;
+    margin: 2em;
+    text-align: center;
+    vertical-align: center;
+}
+
+#call-to-action a {
+    background-color: transparent;
+    border: solid #685CBB 2px;
+    border-radius: 5px;
+    color: #685CBB;
+    display: inline-table;
+    font-weight: 400;
+    margin: 1em;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#call-to-action a:hover {
+    background-color: #685CBB;
+    color: white;
+    text-decoration: none;
+}
+
+/* CH08 - Footer */
+
+footer {
+    background-color: #4D577A;
+    color: #EEEEEE;
+    display: inline-block;
+    font-size: 12pt;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+}

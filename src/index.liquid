@@ -1,34 +1,35 @@
 extends: default.liquid
 ---
-<div class="cover-container">
-  <div class="inner cover">
-    <h1 class="cover-heading">Vision</h1>
-    <p class="lead">Amethyst aims to be a fast, data-oriented, and data-driven game engine suitable for rapid prototyping and iteration.</p>
-    <p class="lead">
-      <a href="https://github.com/amethyst/amethyst#vision" class="btn btn-lg btn-default">Learn more</a>
+<section id="hero" class="home">
+    <h1>Fast and Flexible</h1>
+    <p>Build quality games faster than ever before.</p>
+    <p>
+        <a href="/features.html">What is Amethyst?</a>
+        <a href="https://crates.io/crates/amethyst">Get it now</a>
     </p>
-  </div>
-</div>
-
-<div class="blog-post-container">
-  <h2>What's new?</h2>
-  <!--<br />-->
-  <div class="blog-post-body">
-    {% for post in posts %}
-      <div class="blog-post">
-        <h4 class="blog-post-date {{post.title}}"></h4>
-        <h4 class="blog-post-link"><a href="{{post.path}}">{{ post.title }}</a></h4>
-  		  <script>
-          var date = new Date("{{post.date}}");
-  		    var Month = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-  		    var title = new String("{{post.title}}").split(" ");
-  		    var number = title[title.length - 1];
-
-  		    var date_str = date.getDate() + " " + Month[date.getMonth()] + " " + date.getFullYear();
-  		    document.getElementsByClassName(number)[0].innerText = date_str;
-  		  </script>
-      </div>
-
-    {% endfor %}
-  </div>
-</div>
+</section>
+<section id="features">
+    <ul>
+		<li class="feature-1">
+        	<h4>Industry Grade Tech</h4>
+            <p>Provides the latest and greatest features expected from AAA game engines.</p>
+        </li>
+        <li class="feature-2">
+            <h4>For Coders and Designers</h4>
+            <p>Game objects are defined as simple text files.</p>
+        </li>
+		<li class="feature-3">
+        	<h4>Written in Rust</h4>
+            <p>Fast and low-level like C++, but immune to crashes, memory leaks, and data races.</p>
+        </li>
+		<li class="feature-4">
+        	<h4>Free & Open Source</h4>
+            <p>Complete source code is provided under the permissive <a href="https://github.com/amethyst/amethyst/blob/develop/COPYING">MIT License</a>. Free as in freedom!</p>
+        </li>
+	</ul>
+</section>
+<section id="call-to-action">
+    <h2>Heard enough?</h2>
+    <p>Come follow our step-by-step tutorial to begin.</p>
+    <a href="/book/">Get started</a>
+</section>

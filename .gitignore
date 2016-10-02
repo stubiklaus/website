@@ -1,11 +1,7 @@
 # Unwanted files
-amethyst
-amethyst_dev
 build
+engine
 Cargo.lock
-cobalt.rs
-mdBook
-target
 
 # Backup files
 .DS_Store

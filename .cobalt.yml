@@ -1,7 +1,7 @@
-rss: rss.xml
 name: Amethyst
-description: Everything should be made as simple as possible, but no simpler.
-source: src
-dest: build
-drafts: _drafts
-link: https://amethyst.rs
+description: Data-oriented game engine written in Rust
+source: "src"
+drafts: "src/_drafts"
+dest: "build"
+link: https://www.amethyst.rs/
+# rss: rss.xml

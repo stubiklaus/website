@@ -1,44 +1,70 @@
-#!/bin/bash
+# #!/bin/bash
 
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
-echo "Cleaning up workspace..."
-rm -rf build amethyst cobalt.rs
-mkdir build
+gen_site() {
+    echo "[1/3] Generating site..."
 
-echo "Generating API docs..."
-echo "  Generating master branch docs"
-git clone https://github.com/amethyst/amethyst --branch master
-cd amethyst
-  cargo doc --no-deps -p amethyst -p amethyst_ecs -p amethyst_renderer -p amethyst_engine # TODO: need to update this on the next release
-cd ..
+    cobalt build
+    if [ $? -ne 0 ]; then
+        echo "[1/3] ERROR: Failed to build website with Cobalt!"
+        exit 1
+    fi
+}
 
-echo "  Generating develop branch docs"
-git clone -b develop https://github.com/amethyst/amethyst amethyst_dev
-cd amethyst_dev
-  cargo doc --no-deps -p amethyst -p amethyst_ecs -p amethyst_context -p amethyst_renderer
-cd ..
+gen_docs() {
+    echo "[2/3] Generating documentation..."
 
+    if [ ! -d build ]; then
+        echo "[2/3] ERROR: \`build' folder could not be found!"
+        exit 1
+    fi
 
-echo "Generating book..."
-git clone https://github.com/azerupi/mdBook
-cd mdBook
-git reset --hard 925939e26720e1998796a1735c296048c99ee7f8
-cargo build --release
-cd ..
-./mdBook/target/release/mdbook build amethyst/book
+    mkdir -p engine
+    if [ ! -d engine/master ]; then
+        git clone -q https://github.com/amethyst/amethyst --branch master engine/master
+    elif [ ! -d engine/develop ]; then
+        git clone -q https://github.com/amethyst/amethyst engine/develop
+    fi
 
-echo "Copying files over..."
-cp -r amethyst/book/html/ build/book
-cp -r amethyst/book/images/ build/book/images
+    cargo doc -q --manifest-path engine/master/Cargo.toml --no-deps -p amethyst -p amethyst_ecs -p amethyst_engine
+    if [ $? -ne 0 ]; then
+        echo "[2/3] ERROR: Failed to compile and document the \`master' branch!"
+        exit 1
+    fi
 
-mkdir -p build/doc
-cp -r amethyst/target/doc/ build/doc/master
-cp -r amethyst_dev/target/doc build/doc/develop
-#echo '<meta http-equiv="refresh" content="0; url=amethyst/" />' > web/doc/index.html
+    cargo doc -q --manifest-path engine/develop/Cargo.toml --no-deps -p amethyst -p amethyst_config -p amethyst_context -p amethyst_ecs
+    if [ $? -ne 0 ]; then
+        echo "[2/3] ERROR: Failed to compile and document the \`develop' branch!"
+        exit 1
+    fi
 
-echo "Building website from source..."
-cargo install cobalt-bin
+    mkdir -p build/doc/
+    cp -r engine/master/target/doc/ build/doc/
+    cp -r engine/develop/target/doc/ build/doc/develop/
+}
 
-cobalt build
+gen_book() {
+    echo "[3/3] Generating book..."
 
+    if [ ! -d build ]; then
+        echo "[3/3] ERROR: \`build' folder could not be found!"
+        exit 1
+    elif [ ! -d engine ]; then
+        echo "[3/3] ERROR: \`engine' folder could not be found!"
+        exit 1
+    fi
+
+    mdbook build engine/master/book/
+    if [ $? -ne 0 ]; then
+        echo "[3/3] ERROR: Failed to generate book with mdbook!"
+        exit 1
+    fi
+
+    cp -r engine/master/book/html/ build/book/
+    cp -r engine/master/book/images/ build/book/images/
+}
+
+gen_site && gen_docs && gen_book
+echo "DONE! Please run \`cobalt serve' and navigate to \`127.0.0.1:3000' to"
+echo "      view this site locally."

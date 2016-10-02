@@ -1,0 +1,13 @@
+extends: default.liquid
+---
+<section id="hero" class="news">
+    <h1>This Week in Amethyst</h1>
+</section>
+<section id="primary-content" class="col-12">
+  {% for post in posts %}
+    <p>
+        <h3><a href="{{ post.path }}">{{ post.title }}</a></h3>
+        <p>{{ post.date }}</p>
+    </p>
+  {% endfor %}
+</section>

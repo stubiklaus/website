@@ -2,17 +2,16 @@
 
 .gitter-open-chat-button,
 .gitter-open-chat-button:visited {
-  color: #FFFFFF;
-  background-color: #867CC8;
-  //background-color: #685CBB;
-  font-family: "Raleway", sans-serif;
-  padding-top: 9px;
-  padding-bottom: 7px;
-  padding-left: 24px;
-  padding-right: 24px;
+    background-color: #6B2;
+    color: white;
+    font-weight: bold;
+    padding: 9px 24px 7px 24px;
+    transition: 0.2s;
 }
 
 .gitter-open-chat-button:focus,
 .gitter-open-chat-button:hover {
-    background-color: #685CBB;
-aaaasdf
+    background-color: #7D3;
+    padding-bottom: 1.25em;
+    transition: 0.2s;
+}

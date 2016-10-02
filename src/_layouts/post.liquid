@@ -1,8 +1,16 @@
-<div class="container blog-post-container">
-  <h2>{{ title }}</h2>
-  <div class="blog-post-body">
-    <p>
-      {{content}}
-    </p>
-  </div>
-</div>
+<section id="hero" class="post"></section>
+<section id="primary-content" class="row">
+    <div class="col-9">
+        <article>
+            <h2>{{ title }}</h2>
+            <p>{{ date }}</p>
+            {{ content }}
+        </article>
+    </div>
+    <div class="col-3">
+        <h3>More news</h3>
+      {% for post in posts %}
+        <p><a href="{{ post.path }}">{{ post.title }}</a></p>
+      {% endfor %}
+    </div>
+</section>

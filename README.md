@@ -22,25 +22,31 @@ trigger a rebuild and republish of the site through [Travis CI][tc].
 
 ## Structure
 
-Content                              | Source Path               | Website Path
--------------------------------------|---------------------------|-------------
-Main Content                         | `src/`                    | `/`
-Newsletter (*This Week In Amethyst*) | `src/_posts/`             | `/_posts/`
-Amethyst Book                        | [`amethyst/book/src`][bs] | `/book/`
-Generated API Documentation          | [`amethyst/src/`][ds]     | `/doc/`
+Content                        | Source Path                    | Website Path
+-------------------------------|--------------------------------|--------------
+Main Content                   | `src/`                         | `/`
+News (*This Week in Amethyst*) | `src/posts/`                   | `/posts/`
+Amethyst Book                  | [`engine/master/book/src`][bk] | `/book/`
+Stable API Documentation       | [`engine/master/src/`][ms]     | `/doc/`
+Unstable API Documentation     | [`engine/develop/src/`][ds]    | `/doc/develop/`
 
-[bs]: https://github.com/ebkalderon/amethyst/tree/master/book/src
-[ds]: https://github.com/ebkalderon/amethyst/tree/master/src
+[bk]: https://github.com/ebkalderon/amethyst/tree/master/book/src
+[ms]: https://github.com/ebkalderon/amethyst/tree/master/src
+[ds]: https://github.com/ebkalderon/amethyst/tree/develop/src
 
 ## Building Locally
 
 To generate a local copy of the website, do:
 
 ```
+$ cargo install cobalt-bin
+$ cargo install mdbook
 $ ./generate.sh
 ```
 
-The homepage can be found at `build/index.html`.
+The resulting HTML can be found in the `build` folder. To view it, run
+`cobalt serve` and then navigate to `http://127.0.0.1:3000/` in your favorite
+Web browser.
 
 ## Contributing
 
