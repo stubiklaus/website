@@ -23,7 +23,8 @@ gen_docs() {
     mkdir -p engine
     if [ ! -d engine/master ]; then
         git clone -q https://github.com/amethyst/amethyst --branch master engine/master
-    elif [ ! -d engine/develop ]; then
+    fi
+    if [ ! -d engine/develop ]; then
         git clone -q https://github.com/amethyst/amethyst engine/develop
     fi
 
@@ -54,7 +55,8 @@ gen_book() {
     if [ ! -d build ]; then
         echo "[3/3] ERROR: \`build' folder could not be found!"
         exit 1
-    elif [ ! -d engine ]; then
+    fi
+    if [ ! -d engine ]; then
         echo "[3/3] ERROR: \`engine' folder could not be found!"
         exit 1
     fi
