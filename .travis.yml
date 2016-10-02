@@ -1,30 +1,36 @@
+# Set up the Rust toolchain.
 language: rust
-
 rust:
     - stable
 
+# Force third-party crates to persist from previous builds and update only when
+# needed.
+cache: cargo
+
+# Install the necessary crates for generating the website.
 before_script:
     - export PATH=$PATH:/home/travis/.cargo/bin
-    - cargo install cobalt-bin
-    - cargo install mdbook
+    - (cargo install cobalt-bin || true)
+    - (cargo install mdbook || true)
 
-script:
-    - ./generate.sh
-    - touch build/.nojekyll
-    - echo "www.amethyst.rs" > build/CNAME
+# Generate the website, tell GitHub Pages that we are not using Jekyll, and set
+# up our custom domain name.
+script: |
+    ./generate.sh &&
+    touch build/.nojekyll &&
+    echo "www.amethyst.rs" > build/CNAME
 
+# Update the `gh-pages` branch with the latest version of the website.
 after_success: |
     [ $TRAVIS_BRANCH = master ] &&
     [ $TRAVIS_PULL_REQUEST = false ] &&
-    cobalt import -c src/.cobalt.yml &&
+    cobalt import &&
     git config user.name "Travis CI Worker" &&
     git config user.email "ebkalderon@gmail.com" &&
     git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
 
+# Push notifications to the `amethyst/website` Gitter chat. 
 notifications:
     webhooks:
         urls:
             - https://webhooks.gitter.im/e/d0a22aa55fe94ba11c00
-        on_success: always
-        on_failure: always
-        on_start: never

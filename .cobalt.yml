@@ -1,7 +1,8 @@
 name: Amethyst
 description: Data-oriented game engine written in Rust
 source: "src"
+posts: "src/posts"
 drafts: "src/_drafts"
 dest: "build"
 link: https://www.amethyst.rs/
-rss: rss.xml
+# rss: rss.xml
