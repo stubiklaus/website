@@ -45,7 +45,7 @@ $ ./generate.sh
 ```
 
 The resulting HTML can be found in the `build` folder. To view it, run
-`cobalt serve` and then navigate to `http://127.0.0.1:3000/` in your favorite
+`cobalt serve` and then navigate to `http://127.0.0.1:3000` in your favorite
 Web browser.
 
 ## Contributing
