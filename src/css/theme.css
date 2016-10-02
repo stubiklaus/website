@@ -118,7 +118,7 @@ header nav a img {
 
 #hero.community {
     background: linear-gradient(rgba(209, 26, 255,0.0), rgba(209, 26, 255,0.45)),
-                url('/assets/night-map-earth.png');
+                url('/assets/night-map-earth.jpg');
     background-size: cover;
     height: 30em;
     padding-top: 7em;
