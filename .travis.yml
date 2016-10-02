@@ -3,6 +3,10 @@ language: rust
 rust:
     - stable
 
+# Since this build doesn't require sudo, we can turn it off and improve build
+# performance.
+sudo: false
+
 # Force third-party crates to persist from previous builds and update only when
 # needed.
 cache: cargo
