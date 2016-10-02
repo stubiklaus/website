@@ -3,9 +3,12 @@ language: rust
 rust:
     - stable
 
-script:
+before_script:
+    - export PATH=$PATH:/home/travis/.cargo/bin
     - cargo install cobalt-bin
     - cargo install mdbook
+
+script:
     - ./generate.sh
     - touch build/.nojekyll
     - echo "www.amethyst.rs" > build/CNAME

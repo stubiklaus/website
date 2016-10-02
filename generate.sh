@@ -27,17 +27,21 @@ gen_docs() {
         git clone -q https://github.com/amethyst/amethyst engine/develop
     fi
 
-    cargo doc -q --manifest-path engine/master/Cargo.toml --no-deps -p amethyst -p amethyst_ecs -p amethyst_engine
+    cd engine/master/
+    cargo doc -q --no-deps -p amethyst -p amethyst_ecs -p amethyst_engine
     if [ $? -ne 0 ]; then
         echo "[2/3] ERROR: Failed to compile and document the \`master' branch!"
         exit 1
     fi
+    cd -
 
-    cargo doc -q --manifest-path engine/develop/Cargo.toml --no-deps -p amethyst -p amethyst_config -p amethyst_context -p amethyst_ecs
+    cd engine/develop/
+    cargo doc -q --no-deps -p amethyst -p amethyst_config -p amethyst_context -p amethyst_ecs
     if [ $? -ne 0 ]; then
         echo "[2/3] ERROR: Failed to compile and document the \`develop' branch!"
         exit 1
     fi
+    cd -
 
     mkdir -p build/doc/
     cp -r engine/master/target/doc/ build/doc/
