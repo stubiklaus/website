@@ -6,6 +6,3 @@ drafts: "src/_drafts"
 dest: "build"
 link: https://www.amethyst.rs/
 # rss: rss.xml
-ignore:
-  - .git/*
-  - build/*
