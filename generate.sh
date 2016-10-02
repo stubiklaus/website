@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 
 # Rebuilds the website, blog, book, and API documentation from scratch.
 
@@ -45,7 +45,7 @@ gen_docs() {
     cd -
 
     mkdir -p build/doc/
-    cp -r engine/master/target/doc/ build/doc/
+    cp -r engine/master/target/doc/ build/
     cp -r engine/develop/target/doc/ build/doc/develop/
 }
 
