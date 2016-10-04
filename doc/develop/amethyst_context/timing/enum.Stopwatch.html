@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Stopwatch` enum in crate `amethyst_context`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Stopwatch">
+
+    <title>amethyst_context::timing::Stopwatch - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../../amethyst_context/index.html'><img src='http://tinyurl.com/hgsb45k' alt='logo' width='100'></a>
+        <p class='location'><a href='../index.html'>amethyst_context</a>::<wbr><a href='index.html'>timing</a></p><script>window.sidebarCurrent = {name: 'Stopwatch', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>amethyst_context</a>::<wbr><a href='index.html'>timing</a>::<wbr><a class='enum' href=''>Stopwatch</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-282' class='srclink' href='../../src/amethyst_context/src/context/src/timing.rs.html#7-11' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Stopwatch {
+    Waiting,
+    Started(<a class='struct' href='https://doc.rust-lang.org/nightly/std/time/struct.Instant.html' title='std::time::Instant'>Instant</a>),
+    Ended(<a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>),
+}</pre><div class='docblock'><p>Useful utility for accurately measuring elapsed time.</p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.Waiting' class='variant'><code>Waiting</code></span><span id='variant.Started' class='variant'><code>Started(<a class='struct' href='https://doc.rust-lang.org/nightly/std/time/struct.Instant.html' title='std::time::Instant'>Instant</a>)</code></span><span id='variant.Ended' class='variant'><code>Ended(<a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>)</code></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-290' class='srclink' href='../../src/amethyst_context/src/context/src/timing.rs.html#19-62' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a></code></h4>
+<h4 id='method.elapsed' class='method'><code>fn <a href='#method.elapsed' class='fnname'>elapsed</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a></code></h4>
+<div class='docblock'><p>Retrieves the elapsed time.</p>
+</div><h4 id='method.restart' class='method'><code>fn <a href='#method.restart' class='fnname'>restart</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Stops, resets, and starts the stopwatch again.</p>
+</div><h4 id='method.start' class='method'><code>fn <a href='#method.start' class='fnname'>start</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Starts, or resumes, measuring elapsed time. If the stopwatch has been
+started and stopped before, the new results are compounded onto the
+existing elapsed time value.</p>
+
+<p>Note: Starting an already running stopwatch will do nothing.</p>
+</div><h4 id='method.stop' class='method'><code>fn <a href='#method.stop' class='fnname'>stop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Stops measuring elapsed time.</p>
+
+<p>Note: Stopping a stopwatch that isn&#39;t running will do nothing.</p>
+</div><h4 id='method.reset' class='method'><code>fn <a href='#method.reset' class='fnname'>reset</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Clears the current elapsed time value.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-258' class='srclink' href='../../src/amethyst_context/src/context/src/timing.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-263' class='srclink' href='../../src/amethyst_context/src/context/src/timing.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-288' class='srclink' href='../../src/amethyst_context/src/context/src/timing.rs.html#13-17' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class='enum' href='../../amethyst_context/timing/enum.Stopwatch.html' title='amethyst_context::timing::Stopwatch'>Stopwatch</a></code></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "amethyst_context";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

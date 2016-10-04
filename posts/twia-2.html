@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      
+        <title>Amethyst | This Week in Amethyst 2</title>
+      
+        <meta property="og:title" content="Amethyst">
+        <meta property="og:site_name" content="Amethyst">
+        <meta property="og:image" content="https://www.amethyst.rs/assets/amethyst.png">
+        <meta property="og:description" content="Fast data-driven game engine">
+        <meta property="og:url" content="https://www.amethyst.rs/">
+        <meta property="og:type" content="website">
+
+        <meta name="description" content="Amethyst is a fast and data-driven game engine written in Rust.">
+        <meta name="keywords" content="game, engine, data-oriented, data-driven, rust, amethyst">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+
+        <link rel="stylesheet" href="/css/gitter.css">
+        <link rel="stylesheet" href="/css/grid.css">
+        <link rel="stylesheet" href="/css/theme.css">
+
+        <link rel="icon" href="/assets/favicon.png">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/index.html"><img src="/assets/wire-white.png"/>Amethyst</a>
+                <a href="/features.html">Features</a>
+                <a href="/learn.html">Learn</a>
+                <a href="/news.html">News</a>
+                <a href="/community.html">Community</a>
+                <a href="https://github.com/amethyst" style="float: right;"><img src="/assets/gh-light-120px-plus.png"/></a>
+            </nav>
+        </header>
+      
+        <section id="hero" class="post"></section>
+<section id="primary-content" class="row">
+    <div class="col-9">
+        <article>
+            <h2>This Week in Amethyst 2</h2>
+            <p>25 January 2016 20:00:00 -0500</p>
+            <blockquote>
+<p>News from Jan 18, 2016 – Jan 25, 2016</p>
+</blockquote>
+<p>Hello and welcome to the second issue of <em>This Week in Amethyst</em>, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week. If you have any suggestions or ideas, feel free to call me out on
+<a href="https://gitter.im/ebkalderon/amethyst">Gitter</a>.</p>
+<p><a href="https://github.com/ebkalderon/amethyst/pulls?q=is:pr+closed:2016-01-18..2016-01-25">Three pull requests</a> landed this week.</p>
+<h2>What's cooking on master?</h2>
+<h3>Notable additions</h3>
+<ul>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/3#issuecomment-173722266">Amethyst now builds correctly on stable and beta Rust release channels!</a>
+However, this might not remain for long, as the unstable <code>std::boxed::FnBox</code>
+is going to be incorporated soon. For those on stable Rust, get it while you
+can!</li>
+</ul>
+<ul>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/11">With that in mind, issue #11 has been resolved.</a>. Further emphasis on
+Amethyst's reliance on nightly Rust features is put in the Amethyst book's
+&quot;Hello World&quot; tutorial. Thanks for the pull request, <a href="https://github.com/cooperra">@cooperra</a>!</li>
+</ul>
+<ul>
+<li>As part of <a href="https://github.com/ebkalderon/amethyst/issues/13">issue #13</a>, the engine has been split into multiple
+sub-crates: <code>amethyst_engine</code> and <code>amethyst_renderer</code>.</li>
+</ul>
+<ul>
+<li><a href="https://github.com/ebkalderon/amethyst/blob/master/tests/state.rs">The state machine gained some unit tests!</a> Thanks for the pull request,
+<a href="https://github.com/Oflor">@Oflor</a>!</li>
+</ul>
+<ul>
+<li><a href="https://github.com/ebkalderon/amethyst/tree/master/tests">Unit tests have been moved into the <code>tests</code> folder</a>, which isn't quite
+idiomatic practice but is a good enough solution for now. Thanks again to
+<a href="https://github.com/Oflor">@Oflor</a>!</li>
+</ul>
+<h2>New issues</h2>
+<ul>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/11">Implement thread-safe ECS (issue #10)</a></li>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/13">Reorganize project infrastructure (issue #13)</a></li>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/16">Use GFX for rendering (issue #16)</a></li>
+</ul>
+<p>New contributors</p>
+<ul>
+<li><a href="https://github.com/Oflor">Oflor</a></li>
+<li><a href="https://github.com/cooperra">Robbie Cooper</a></li>
+</ul>
+<h2>Other announcements</h2>
+<p>Once issue #13 is closed and the unit test matter is resolved, expect the first
+official release of the &quot;Explosive Cleric&quot; series, Amethyst 0.2.0!</p>
+
+        </article>
+    </div>
+    <div class="col-3">
+        <h3>More news</h3>
+      
+        <p><a href="posts/twia-9.html">These Months in Amethyst 9</a></p>
+      
+        <p><a href="posts/twia-8.html">These Weeks in Amethyst 8</a></p>
+      
+        <p><a href="posts/twia-7.html">These Weeks in Amethyst 7</a></p>
+      
+        <p><a href="posts/twia-6.html">This Week in Amethyst 6</a></p>
+      
+        <p><a href="posts/twia-5.html">This Week in Amethyst 5</a></p>
+      
+        <p><a href="posts/twia-4.html">This Week in Amethyst 4</a></p>
+      
+        <p><a href="posts/twia-3.html">This Week in Amethyst 3</a></p>
+      
+        <p><a href="posts/twia-2.html">This Week in Amethyst 2</a></p>
+      
+        <p><a href="posts/twia-1.html">This Week in Amethyst 1</a></p>
+      
+        <p><a href="posts/twia-0.html">This Week in Amethyst 0</a></p>
+      
+    </div>
+</section>
+
+      
+        <footer>
+            <p>© 2015 The Amethyst Developers</p>
+            <p>Proudly hosted on <a href="https://pages.github.com">GitHub Pages</a></p>
+        </footer>
+        <script>
+            ((window.gitter = {}).chat = {}).options = {
+                room: 'amethyst/general',
+                useStyles: false,
+            };
+        </script>
+        <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    </body>
+</html>

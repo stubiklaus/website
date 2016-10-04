@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      
+        <title>Amethyst | This Week in Amethyst 1</title>
+      
+        <meta property="og:title" content="Amethyst">
+        <meta property="og:site_name" content="Amethyst">
+        <meta property="og:image" content="https://www.amethyst.rs/assets/amethyst.png">
+        <meta property="og:description" content="Fast data-driven game engine">
+        <meta property="og:url" content="https://www.amethyst.rs/">
+        <meta property="og:type" content="website">
+
+        <meta name="description" content="Amethyst is a fast and data-driven game engine written in Rust.">
+        <meta name="keywords" content="game, engine, data-oriented, data-driven, rust, amethyst">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+
+        <link rel="stylesheet" href="/css/gitter.css">
+        <link rel="stylesheet" href="/css/grid.css">
+        <link rel="stylesheet" href="/css/theme.css">
+
+        <link rel="icon" href="/assets/favicon.png">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/index.html"><img src="/assets/wire-white.png"/>Amethyst</a>
+                <a href="/features.html">Features</a>
+                <a href="/learn.html">Learn</a>
+                <a href="/news.html">News</a>
+                <a href="/community.html">Community</a>
+                <a href="https://github.com/amethyst" style="float: right;"><img src="/assets/gh-light-120px-plus.png"/></a>
+            </nav>
+        </header>
+      
+        <section id="hero" class="post"></section>
+<section id="primary-content" class="row">
+    <div class="col-9">
+        <article>
+            <h2>This Week in Amethyst 1</h2>
+            <p>18 January 2016 20:00:00 -0500</p>
+            <blockquote>
+<p>News from Jan 11, 2016 – Jan 18, 2016</p>
+</blockquote>
+<p>Hello and welcome to the first official issue of <em>This Week in Amethyst</em>, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week. If you have any suggestions or ideas, feel free to call me out on
+<a href="https://gitter.im/ebkalderon/amethyst">Gitter</a>.</p>
+<p><a href="https://github.com/ebkalderon/amethyst/pulls?q=is:pr+closed:2016-01-11..2016-01-18">One major pull request</a> landed this week.</p>
+<h2>What's cooking on master?</h2>
+<h3>Notable additions</h3>
+<ul>
+<li><a href="https://github.com/ebkalderon/amethyst/pull/6">State transitions are finished</a> in the pushdown automaton code!</li>
+<li><a href="https://github.com/ebkalderon/amethyst#vision">Official vision for the Amethyst project</a> has been codified in the
+<code>README.md</code> file, along with a multitude of links.</li>
+<li><a href="https://github.com/ebkalderon/amethyst/blob/master/CONTRIBUTING.md#submitting-issues">Issue labeling has been codified</a> for all issue trackers in the
+Contribution Guidelines.</li>
+<li><a href="https://github.com/ebkalderon/amethyst_cli/issues/1">Issue #1 for Amethyst-CLI has been resolved.</a> Cargo output now prints in
+real-time.</li>
+</ul>
+<h2>New issues</h2>
+<ul>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/7">Redesign GPU state management (issue #7)</a></li>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/8">Code name for 1.0 release (issue #8)</a></li>
+<li><a href="https://github.com/ebkalderon/amethyst/issues/9">Write unit tests for state machine (issue #9)</a></li>
+</ul>
+<h2>New contributors</h2>
+<p>No new people have joined this week!</p>
+<h2>Other announcements</h2>
+<p>Right now, there are some experiments being done on the <a href="https://github.com/ebkalderon/amethyst/tree/ecs">ecs branch</a>
+combining the traditional entity-component-system with
+<a href="https://www.reddit.com/r/rust/comments/415a1x/github_ebkalderonamethyst_dataoriented_game/cz0dgf1">tomaka's suggested MVC-with-parallelism design.</a>.</p>
+<p>Clearly, the <code>World</code> struct containing our entities and components is
+analogous to the <em>model</em> in MVC. But systems typically require mutable state for
+strictly read-only operations, so they don't fit into either <em>views</em> or
+<em>controllers</em>, nor are they easy to parallelize.</p>
+<p>However, there are two possible ways to remedy this issue.</p>
+<ol>
+<li>Systems are split into separate traits: Updaters and Viewers. The Viewers
+only require read access to the <code>World</code>, so they can run in parallel.
+Updaters request mutable access to the <code>World</code> and submit a list of changes
+they want to make to the content. These changes are applied serially
+according to a predetermined priority.</li>
+<li>Systems are kept as one unit (perhaps renamed to &quot;Processors&quot; for clarity),
+and they all read the <code>World</code> struct in parallel but can optionally submit
+changes to the <code>World</code> which are applied serially once everyone has finished
+reading.</li>
+</ol>
+<p>What do you think about these approaches? Leave your thoughts in the
+<a href="https://gitter.im/ebkalderon/amethyst">Gitter chat</a>.</p>
+
+        </article>
+    </div>
+    <div class="col-3">
+        <h3>More news</h3>
+      
+        <p><a href="posts/twia-9.html">These Months in Amethyst 9</a></p>
+      
+        <p><a href="posts/twia-8.html">These Weeks in Amethyst 8</a></p>
+      
+        <p><a href="posts/twia-7.html">These Weeks in Amethyst 7</a></p>
+      
+        <p><a href="posts/twia-6.html">This Week in Amethyst 6</a></p>
+      
+        <p><a href="posts/twia-5.html">This Week in Amethyst 5</a></p>
+      
+        <p><a href="posts/twia-4.html">This Week in Amethyst 4</a></p>
+      
+        <p><a href="posts/twia-3.html">This Week in Amethyst 3</a></p>
+      
+        <p><a href="posts/twia-2.html">This Week in Amethyst 2</a></p>
+      
+        <p><a href="posts/twia-1.html">This Week in Amethyst 1</a></p>
+      
+        <p><a href="posts/twia-0.html">This Week in Amethyst 0</a></p>
+      
+    </div>
+</section>
+
+      
+        <footer>
+            <p>© 2015 The Amethyst Developers</p>
+            <p>Proudly hosted on <a href="https://pages.github.com">GitHub Pages</a></p>
+        </footer>
+        <script>
+            ((window.gitter = {}).chat = {}).options = {
+                room: 'amethyst/general',
+                useStyles: false,
+            };
+        </script>
+        <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    </body>
+</html>

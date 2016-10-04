@@ -1,0 +1,10 @@
+(function() {var implementors = {};
+implementors["amethyst_config"] = ["impl&lt;T&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a> for Scanner&lt;T&gt; <span class='where'>where T: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a>&lt;Item=<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.char.html'>char</a>&gt;</span>",];implementors["amethyst_ecs"] = ["impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a> for <a class='struct' href='amethyst_ecs/struct.CreateEntities.html' title='amethyst_ecs::CreateEntities'>CreateEntities</a>&lt;'a&gt;","impl&lt;J&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a> for <a class='struct' href='amethyst_ecs/struct.JoinIter.html' title='amethyst_ecs::JoinIter'>JoinIter</a>&lt;J&gt; <span class='where'>where J: <a class='trait' href='amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Join</a></span>",];implementors["amethyst_context"] = ["impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a> for PollEventsIterator&lt;'a&gt;","impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a> for WaitEventsIterator&lt;'a&gt;","impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html' title='core::iter::iterator::Iterator'>Iterator</a> for AvailableMonitorsIter",];
+
+            if (window.register_implementors) {
+                window.register_implementors(implementors);
+            } else {
+                window.pending_implementors = implementors;
+            }
+        
+})()

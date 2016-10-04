@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `amethyst_renderer` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, amethyst_renderer">
+
+    <title>amethyst_renderer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../amethyst_renderer/index.html'><img src='http://tinyurl.com/hgsb45k' alt='logo' width='100'></a>
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'amethyst_renderer', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>amethyst_renderer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/amethyst_renderer/src/renderer/src/lib.rs.html#1-308' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>High-level rendering engine with multiple backends.</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use pass::<a class='trait' href='../amethyst_renderer/pass/trait.PassDescription.html' title='amethyst_renderer::pass::PassDescription'>PassDescription</a>;</code></td></tr><tr><td><code>pub use target::<a class='trait' href='../amethyst_renderer/target/trait.Target.html' title='amethyst_renderer::target::Target'>Target</a>;</code></td></tr><tr><td><code>pub use pass::<a class='trait' href='../amethyst_renderer/pass/trait.Pass.html' title='amethyst_renderer::pass::Pass'>Pass</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='pass/index.html'
+                                  title='amethyst_renderer::pass'>pass</a></td>
+                           <td class='docblock short'>
+                                <p>Contains the included Passes</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='target/index.html'
+                                  title='amethyst_renderer::target'>target</a></td>
+                           <td class='docblock short'>
+                                <p>Contains the included Render Targets</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Camera.html'
+                                  title='amethyst_renderer::Camera'>Camera</a></td>
+                           <td class='docblock short'>
+                                <p>Contains the transforms for a Camera</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ConstantColorTexture.html'
+                                  title='amethyst_renderer::ConstantColorTexture'>ConstantColorTexture</a></td>
+                           <td class='docblock short'>
+                                <p>holds a 1x1 texture that can be used to store constant colors</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Fragment.html'
+                                  title='amethyst_renderer::Fragment'>Fragment</a></td>
+                           <td class='docblock short'>
+                                <p>A fragment is the most basic drawable element</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Frame.html'
+                                  title='amethyst_renderer::Frame'>Frame</a></td>
+                           <td class='docblock short'>
+                                <p>The render job submission</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Layer.html'
+                                  title='amethyst_renderer::Layer'>Layer</a></td>
+                           <td class='docblock short'>
+                                <p>A layer is comprised of a Render target and
+a list of passes</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Light.html'
+                                  title='amethyst_renderer::Light'>Light</a></td>
+                           <td class='docblock short'>
+                                <p>A basic light</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Renderer.html'
+                                  title='amethyst_renderer::Renderer'>Renderer</a></td>
+                           <td class='docblock short'>
+                                <p>A Renderer manages passes and the execution of the passes
+over the targets. It only contains the passes, all other
+data is contained in the <code>Frame</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Scene.html'
+                                  title='amethyst_renderer::Scene'>Scene</a></td>
+                           <td class='docblock short'>
+                                <p>A scene is a collection of fragments and
+lights that make up the scene.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.VertexPosNormal.html'
+                                  title='amethyst_renderer::VertexPosNormal'>VertexPosNormal</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.Texture.html'
+                                  title='amethyst_renderer::Texture'>Texture</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_renderer";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

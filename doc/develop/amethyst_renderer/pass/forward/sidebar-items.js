@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["flat",""],["shaded",""],["wireframe",""]],"static":[["FLAT_FRAGMENT_SRC",""],["FRAGMENT_SRC",""],["VERTEX_SRC",""],["WIREFRAME_GEOMETRY_SRC",""]],"struct":[["Clear",""],["DrawFlat",""],["DrawShaded",""],["FragmentArgs",""],["PointLight",""],["VertexArgs",""],["Wireframe",""]],"type":[["GFormat",""]]});

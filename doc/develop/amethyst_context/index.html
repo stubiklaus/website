@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `amethyst_context` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, amethyst_context">
+
+    <title>amethyst_context - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../amethyst_context/index.html'><img src='http://tinyurl.com/hgsb45k' alt='logo' width='100'></a>
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'amethyst_context', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>amethyst_context</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/amethyst_context/src/context/src/lib.rs.html#1-110' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>A way to manage engine resources.</p>
+
+<h1 id='basic-usage' class='section-header'><a href='#basic-usage'>Basic usage:</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>amethyst_config</span>;
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>amethyst_context</span>;
+
+<span class='kw'>use</span> <span class='ident'>amethyst_config</span>::<span class='ident'>Element</span>;
+<span class='kw'>use</span> <span class='ident'>amethyst_context</span>::{<span class='ident'>Context</span>, <span class='ident'>ContextConfig</span>};
+
+
+<span class='kw'>fn</span> <span class='ident'>main</span>() {
+    <span class='kw'>let</span> <span class='ident'>config</span> <span class='op'>=</span> <span class='ident'>ContextConfig</span>::<span class='ident'>default</span>();
+    <span class='kw'>let</span> <span class='ident'>context</span> <span class='op'>=</span> <span class='ident'>Context</span>::<span class='ident'>new</span>(<span class='ident'>config</span>);
+    <span class='comment'>// Now resources provided by Context are available</span>
+}</pre>
+
+<p>See <code>amethyst/examples/window.rs</code> for an example.</p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='asset_manager/index.html'
+                                  title='amethyst_context::asset_manager'>asset_manager</a></td>
+                           <td class='docblock short'>
+                                <p>This module provides an asset manager
+which loads and provides access to assets,
+such as <code>Texture</code>s, <code>Mesh</code>es, and <code>Fragment</code>s.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='broadcaster/index.html'
+                                  title='amethyst_context::broadcaster'>broadcaster</a></td>
+                           <td class='docblock short'>
+                                <p>This module contains <code>Broadcaster</code> struct
+which allows publishing and polling specs
+entities. It is primarily used for event
+handling.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='event/index.html'
+                                  title='amethyst_context::event'>event</a></td>
+                           <td class='docblock short'>
+                                <p>This module contains the <code>EngineEvent</code> component and reexports glutin event types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='input/index.html'
+                                  title='amethyst_context::input'>input</a></td>
+                           <td class='docblock short'>
+                                <p>The input handler for the game engine</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='renderer/index.html'
+                                  title='amethyst_context::renderer'>renderer</a></td>
+                           <td class='docblock short'>
+                                <p>This module provides a frontend for
+<code>amethyst_renderer</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='timing/index.html'
+                                  title='amethyst_context::timing'>timing</a></td>
+                           <td class='docblock short'>
+                                <p>Utilities for working with time.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='video_context/index.html'
+                                  title='amethyst_context::video_context'>video_context</a></td>
+                           <td class='docblock short'>
+                                <p>This module contains <code>VideoContext</code> enum which holds all the resources related to video subsystem.</p>
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Context.html'
+                                  title='amethyst_context::Context'>Context</a></td>
+                           <td class='docblock short'>
+                                <p>Contains all engine resources which must be shared by multiple parties, in particular <code>Renderer</code> and <code>Broadcaster</code>.
+An <code>Arc&lt;Mutex&lt;Context&gt;&gt;</code> is passed to every <code>Processor</code> run by the engine and a <code>&amp;mut Context</code> is passed to every <code>State</code>
+method.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ContextConfig.html'
+                                  title='amethyst_context::ContextConfig'>ContextConfig</a></td>
+                           <td class='docblock short'>
+                                <p>Contains configs for resources provided by <code>Context</code></p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_context";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Renderer` struct in crate `amethyst_context`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Renderer">
+
+    <title>amethyst_context::renderer::Renderer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../../amethyst_context/index.html'><img src='http://tinyurl.com/hgsb45k' alt='logo' width='100'></a>
+        <p class='location'><a href='../index.html'>amethyst_context</a>::<wbr><a href='index.html'>renderer</a></p><script>window.sidebarCurrent = {name: 'Renderer', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>amethyst_context</a>::<wbr><a href='index.html'>renderer</a>::<wbr><a class='struct' href=''>Renderer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-323' class='srclink' href='../../src/amethyst_context/src/context/src/renderer.rs.html#27-29' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Renderer {
+    // some fields omitted
+}</pre><div class='docblock'><p>A wraper around <code>VideoContext</code> required to
+hide all platform specific code from the user.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../amethyst_context/renderer/struct.Renderer.html' title='amethyst_context::renderer::Renderer'>Renderer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-325' class='srclink' href='../../src/amethyst_context/src/context/src/renderer.rs.html#31-294' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(video_context: <a class='enum' href='../../amethyst_context/video_context/enum.VideoContext.html' title='amethyst_context::video_context::VideoContext'>VideoContext</a>) -&gt; <a class='struct' href='../../amethyst_context/renderer/struct.Renderer.html' title='amethyst_context::renderer::Renderer'>Renderer</a></code></h4>
+<div class='docblock'><p>Create a new <code>Renderer</code> from <code>DisplayConfig</code>.</p>
+</div><h4 id='method.set_pipeline' class='method'><code>fn <a href='#method.set_pipeline' class='fnname'>set_pipeline</a>(&amp;mut self, pipeline: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../amethyst_renderer/struct.Layer.html' title='amethyst_renderer::Layer'>Layer</a>&gt;)</code></h4>
+<div class='docblock'><p>Set the rendering pipeline to be used.</p>
+</div><h4 id='method.add_target' class='method'><code>fn <a href='#method.add_target' class='fnname'>add_target</a>(&amp;mut self, target: <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../../amethyst_renderer/target/trait.Target.html' title='amethyst_renderer::target::Target'>Target</a>&gt;, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+<div class='docblock'><p>Add a rendering <code>Target</code>.</p>
+</div><h4 id='method.delete_target' class='method'><code>fn <a href='#method.delete_target' class='fnname'>delete_target</a>(&amp;mut self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+<div class='docblock'><p>Delete a rendering <code>Target</code>.</p>
+</div><h4 id='method.add_scene' class='method'><code>fn <a href='#method.add_scene' class='fnname'>add_scene</a>(&amp;mut self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+<div class='docblock'><p>Add an empty <code>Scene</code>.</p>
+</div><h4 id='method.delete_scene' class='method'><code>fn <a href='#method.delete_scene' class='fnname'>delete_scene</a>(&amp;mut self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+<div class='docblock'><p>Delete a <code>Scene</code>.</p>
+</div><h4 id='method.add_fragment' class='method'><code>fn <a href='#method.add_fragment' class='fnname'>add_fragment</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, fragment: <a class='struct' href='../../amethyst_context/renderer/struct.Fragment.html' title='amethyst_context::renderer::Fragment'>Fragment</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;</code></h4>
+<div class='docblock'><p>Add a <code>Fragment</code> to the scene with name <code>scene_name</code>.
+Return the index of the added <code>Fragment</code>.</p>
+</div><h4 id='method.mut_fragment_transform' class='method'><code>fn <a href='#method.mut_fragment_transform' class='fnname'>mut_fragment_transform</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, idx: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 4]</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 4]</a>&gt;</code></h4>
+<div class='docblock'><p>Get a mutable reference to the transform field of <code>Fragment</code> with index <code>idx</code>
+in scene <code>scene_name</code>.</p>
+</div><h4 id='method.delete_fragment' class='method'><code>fn <a href='#method.delete_fragment' class='fnname'>delete_fragment</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, idx: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>)</code></h4>
+<div class='docblock'><p>Delete <code>Fragment</code> with index <code>idx</code> in scene <code>scene_name</code>.</p>
+</div><h4 id='method.num_fragments' class='method'><code>fn <a href='#method.num_fragments' class='fnname'>num_fragments</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;</code></h4>
+<h4 id='method.add_light' class='method'><code>fn <a href='#method.add_light' class='fnname'>add_light</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, light: <a class='struct' href='../../amethyst_renderer/struct.Light.html' title='amethyst_renderer::Light'>Light</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;</code></h4>
+<div class='docblock'><p>Add a <code>Light</code> to the scene <code>scene_name</code>.
+Return the index of the added <code>Light</code>.</p>
+</div><h4 id='method.mut_light' class='method'><code>fn <a href='#method.mut_light' class='fnname'>mut_light</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, idx: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut <a class='struct' href='../../amethyst_renderer/struct.Light.html' title='amethyst_renderer::Light'>Light</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup <code>Light</code> in scene <code>scene_name</code> by index.</p>
+</div><h4 id='method.delete_light' class='method'><code>fn <a href='#method.delete_light' class='fnname'>delete_light</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, idx: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>)</code></h4>
+<div class='docblock'><p>Delete <code>Light</code> with index <code>idx</code> in scene <code>scene_name</code>.</p>
+</div><h4 id='method.num_lights' class='method'><code>fn <a href='#method.num_lights' class='fnname'>num_lights</a>(&amp;mut self, scene_name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;</code></h4>
+<h4 id='method.add_camera' class='method'><code>fn <a href='#method.add_camera' class='fnname'>add_camera</a>(&amp;mut self, camera: <a class='struct' href='../../amethyst_renderer/struct.Camera.html' title='amethyst_renderer::Camera'>Camera</a>, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+<div class='docblock'><p>Add a <code>Camera</code>.</p>
+</div><h4 id='method.mut_camera' class='method'><code>fn <a href='#method.mut_camera' class='fnname'>mut_camera</a>(&amp;mut self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut <a class='struct' href='../../amethyst_renderer/struct.Camera.html' title='amethyst_renderer::Camera'>Camera</a>&gt;</code></h4>
+<div class='docblock'><p>Lookup a <code>Camera</code> by name.</p>
+</div><h4 id='method.delete_camera' class='method'><code>fn <a href='#method.delete_camera' class='fnname'>delete_camera</a>(&amp;mut self, name: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>)</code></h4>
+<div class='docblock'><p>Delete a <code>Camera</code>.</p>
+</div><h4 id='method.get_dimensions' class='method'><code>fn <a href='#method.get_dimensions' class='fnname'>get_dimensions</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+<h4 id='method.mut_video_context' class='method'><code>fn <a href='#method.mut_video_context' class='fnname'>mut_video_context</a>(&amp;mut self) -&gt; &amp;mut <a class='enum' href='../../amethyst_context/video_context/enum.VideoContext.html' title='amethyst_context::video_context::VideoContext'>VideoContext</a></code></h4>
+<div class='docblock'><p>Get a mutable reference to <code>VideoContext</code>.</p>
+</div><h4 id='method.submit' class='method'><code>fn <a href='#method.submit' class='fnname'>submit</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Submit the <code>Frame</code> to <code>amethyst_renderer::Renderer</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "amethyst_context";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

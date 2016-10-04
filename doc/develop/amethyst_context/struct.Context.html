@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Context` struct in crate `amethyst_context`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Context">
+
+    <title>amethyst_context::Context - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../amethyst_context/index.html'><img src='http://tinyurl.com/hgsb45k' alt='logo' width='100'></a>
+        <p class='location'><a href='index.html'>amethyst_context</a></p><script>window.sidebarCurrent = {name: 'Context', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>amethyst_context</a>::<wbr><a class='struct' href=''>Context</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-730' class='srclink' href='../src/amethyst_context/src/context/src/lib.rs.html#56-65' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Context {
+    pub renderer: <a class='struct' href='../amethyst_context/renderer/struct.Renderer.html' title='amethyst_context::renderer::Renderer'>Renderer</a>,
+    pub asset_manager: <a class='struct' href='../amethyst_context/asset_manager/struct.AssetManager.html' title='amethyst_context::asset_manager::AssetManager'>AssetManager</a>,
+    pub input_handler: <a class='struct' href='../amethyst_context/input/struct.InputHandler.html' title='amethyst_context::input::InputHandler'>InputHandler</a>,
+    pub broadcaster: <a class='struct' href='../amethyst_context/broadcaster/struct.Broadcaster.html' title='amethyst_context::broadcaster::Broadcaster'>Broadcaster</a>,
+    pub delta_time: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>,
+    pub fixed_step: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a>,
+    pub last_fixed_update: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/struct.Instant.html' title='std::time::Instant'>Instant</a>,
+}</pre><div class='docblock'><p>Contains all engine resources which must be shared by multiple parties, in particular <code>Renderer</code> and <code>Broadcaster</code>.
+An <code>Arc&lt;Mutex&lt;Context&gt;&gt;</code> is passed to every <code>Processor</code> run by the engine and a <code>&amp;mut Context</code> is passed to every <code>State</code>
+method.</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.renderer' class='structfield'><code>renderer: <a class='struct' href='../amethyst_context/renderer/struct.Renderer.html' title='amethyst_context::renderer::Renderer'>Renderer</a></code>
+                           </span><span class='stab '></span><span id='structfield.asset_manager' class='structfield'><code>asset_manager: <a class='struct' href='../amethyst_context/asset_manager/struct.AssetManager.html' title='amethyst_context::asset_manager::AssetManager'>AssetManager</a></code>
+                           </span><span class='stab '></span><span id='structfield.input_handler' class='structfield'><code>input_handler: <a class='struct' href='../amethyst_context/input/struct.InputHandler.html' title='amethyst_context::input::InputHandler'>InputHandler</a></code>
+                           </span><span class='stab '></span><span id='structfield.broadcaster' class='structfield'><code>broadcaster: <a class='struct' href='../amethyst_context/broadcaster/struct.Broadcaster.html' title='amethyst_context::broadcaster::Broadcaster'>Broadcaster</a></code>
+                           </span><span class='stab '></span><span id='structfield.delta_time' class='structfield'><code>delta_time: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a></code>
+                           </span><span class='stab '></span><span id='structfield.fixed_step' class='structfield'><code>fixed_step: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html' title='std::time::duration::Duration'>Duration</a></code>
+                           </span><span class='stab '></span><span id='structfield.last_fixed_update' class='structfield'><code>last_fixed_update: <a class='struct' href='https://doc.rust-lang.org/nightly/std/time/struct.Instant.html' title='std::time::Instant'>Instant</a></code>
+                           </span><span class='stab '></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../amethyst_context/struct.Context.html' title='amethyst_context::Context'>Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-739' class='srclink' href='../src/amethyst_context/src/context/src/lib.rs.html#69-110' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(config: <a class='struct' href='../amethyst_context/struct.ContextConfig.html' title='amethyst_context::ContextConfig'>ContextConfig</a>) -&gt; <a class='struct' href='../amethyst_context/struct.Context.html' title='amethyst_context::Context'>Context</a></code></h4>
+<div class='docblock'><p>Create a <code>Context</code> configured according to <code>ContextConfig</code></p>
+</div><h4 id='method.poll_engine_events' class='method'><code>fn <a href='#method.poll_engine_events' class='fnname'>poll_engine_events</a>(&amp;mut self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../amethyst_context/event/struct.EngineEvent.html' title='amethyst_context::event::EngineEvent'>EngineEvent</a>&gt;</code></h4>
+<div class='docblock'><p>Return a vector containing all engine events
+that have occured since the last call of this method</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> for <a class='struct' href='../amethyst_context/struct.Context.html' title='amethyst_context::Context'>Context</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-738' class='srclink' href='../src/amethyst_context/src/context/src/lib.rs.html#67' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_context";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

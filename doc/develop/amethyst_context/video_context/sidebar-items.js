@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["VideoContext","Contains all resources related to video subsystem, variants of this enum represent available backends"]],"struct":[["DisplayConfig","Contains display config, it is required to create a `VideoContext`"]]});

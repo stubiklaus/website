@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Storage` struct in crate `amethyst_ecs`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Storage">
+
+    <title>amethyst_ecs::Storage - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>amethyst_ecs</a></p><script>window.sidebarCurrent = {name: 'Storage', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>amethyst_ecs</a>::<wbr><a class='struct' href=''>Storage</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct Storage&lt;T,&nbsp;A,&nbsp;D&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>A wrapper around the masked storage and the generations vector.
+Can be used for safe lookup of components, insertions and removes.
+This is what <code>World::read/write</code> locks for the user.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;T,&nbsp;A,&nbsp;D&gt; <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;</code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(alloc: A, data: D) -&gt; <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;</code></h4>
+<div class='docblock'><p>Create a new <code>Storage</code></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T,&nbsp;A,&nbsp;D&gt; <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt; <span class='where'>where A: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.Allocator.html' title='amethyst_ecs::Allocator'>Allocator</a>&gt;, D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.MaskedStorage.html' title='amethyst_ecs::MaskedStorage'>MaskedStorage</a>&lt;T&gt;&gt;, T: <a class='trait' href='../amethyst_ecs/trait.Component.html' title='amethyst_ecs::Component'>Component</a></span></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.get' class='method'><code>fn <a href='#method.get' class='fnname'>get</a>(&amp;self, e: <a class='struct' href='../amethyst_ecs/struct.Entity.html' title='amethyst_ecs::Entity'>Entity</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;T&gt;</code></h4>
+<div class='docblock'><p>Tries to read the data associated with an <code>Entity</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T,&nbsp;A,&nbsp;D&gt; <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt; <span class='where'>where A: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.Allocator.html' title='amethyst_ecs::Allocator'>Allocator</a>&gt;, D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.DerefMut.html' title='core::ops::DerefMut'>DerefMut</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.MaskedStorage.html' title='amethyst_ecs::MaskedStorage'>MaskedStorage</a>&lt;T&gt;&gt;, T: <a class='trait' href='../amethyst_ecs/trait.Component.html' title='amethyst_ecs::Component'>Component</a></span></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.get_mut' class='method'><code>fn <a href='#method.get_mut' class='fnname'>get_mut</a>(&amp;mut self, e: <a class='struct' href='../amethyst_ecs/struct.Entity.html' title='amethyst_ecs::Entity'>Entity</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;mut T&gt;</code></h4>
+<div class='docblock'><p>Tries to mutate the data associated with an <code>Entity</code>.</p>
+</div><h4 id='method.insert' class='method'><code>fn <a href='#method.insert' class='fnname'>insert</a>(&amp;mut self, e: <a class='struct' href='../amethyst_ecs/struct.Entity.html' title='amethyst_ecs::Entity'>Entity</a>, v: T) -&gt; <a class='enum' href='../amethyst_ecs/enum.InsertResult.html' title='amethyst_ecs::InsertResult'>InsertResult</a>&lt;T&gt;</code></h4>
+<div class='docblock'><p>Inserts new data for a given <code>Entity</code>.
+Returns the result of the operation as a <code>InsertResult&lt;T&gt;</code></p>
+</div><h4 id='method.remove' class='method'><code>fn <a href='#method.remove' class='fnname'>remove</a>(&amp;mut self, e: <a class='struct' href='../amethyst_ecs/struct.Entity.html' title='amethyst_ecs::Entity'>Entity</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;T&gt;</code></h4>
+<div class='docblock'><p>Removes the data associated with an <code>Entity</code>.</p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>Clears the contents of the storage.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a,&nbsp;T,&nbsp;A,&nbsp;D&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Not.html' title='core::ops::Not'>Not</a> for &amp;'a <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt; <span class='where'>where D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.MaskedStorage.html' title='amethyst_ecs::MaskedStorage'>MaskedStorage</a>&lt;T&gt;&gt;, T: <a class='trait' href='../amethyst_ecs/trait.Component.html' title='amethyst_ecs::Component'>Component</a></span></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Not.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../amethyst_ecs/struct.AntiStorage.html' title='amethyst_ecs::AntiStorage'>AntiStorage</a>&lt;'a&gt;</code></h4>
+<h4 id='method.not' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Not.html#tymethod.not' class='fnname'>not</a>(self) -&gt; &amp;'a <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;::<a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Not.html' title='core::ops::Not'>Output</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a,&nbsp;T,&nbsp;A,&nbsp;D&gt; <a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Join</a> for &amp;'a <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt; <span class='where'>where A: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.Allocator.html' title='amethyst_ecs::Allocator'>Allocator</a>&gt;, D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.MaskedStorage.html' title='amethyst_ecs::MaskedStorage'>MaskedStorage</a>&lt;T&gt;&gt;, T: <a class='trait' href='../amethyst_ecs/trait.Component.html' title='amethyst_ecs::Component'>Component</a></span></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Type' class='type'><code>type <a href='../amethyst_ecs/trait.Join.html#associatedtype.Type' class='type'>Type</a> = &amp;'a T</code></h4>
+<div class='docblock'><p>Type of joined components.</p>
+</div><h4 id='associatedtype.Value' class='type'><code>type <a href='../amethyst_ecs/trait.Join.html#associatedtype.Value' class='type'>Value</a> = &amp;'a T::<a class='trait' href='../amethyst_ecs/trait.Component.html' title='amethyst_ecs::Component'>Storage</a></code></h4>
+<div class='docblock'><p>Type of joined storages.</p>
+</div><h4 id='associatedtype.Mask' class='type'><code>type <a href='../amethyst_ecs/trait.Join.html#associatedtype.Mask' class='type'>Mask</a> = &amp;'a BitSet</code></h4>
+<div class='docblock'><p>Type of joined bit mask.</p>
+</div><h4 id='method.open' class='method'><code>fn <a href='../amethyst_ecs/trait.Join.html#tymethod.open' class='fnname'>open</a>(self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a>&amp;'a <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;::<a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Mask</a>, &amp;'a <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;::<a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Value</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<div class='docblock'><p>Open this join by returning the mask and the storages.</p>
+</div><h4 id='method.get-1' class='method'><code>unsafe fn <a href='../amethyst_ecs/trait.Join.html#tymethod.get' class='fnname'>get</a>(v: &amp;mut &amp;'a <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;::<a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Value</a>, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; &amp;'a T</code></h4>
+<div class='docblock'><p>Get a joined component value by a gien index.</p>
+</div><h4 id='method.iter' class='method'><code>fn <a href='../amethyst_ecs/trait.Join.html#method.iter' class='fnname'>iter</a>(self) -&gt; <a class='struct' href='../amethyst_ecs/struct.JoinIter.html' title='amethyst_ecs::JoinIter'>JoinIter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Create a joined iterator over the contents.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a,&nbsp;T,&nbsp;A,&nbsp;D&gt; <a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Join</a> for &amp;'a mut <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt; <span class='where'>where A: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.Allocator.html' title='amethyst_ecs::Allocator'>Allocator</a>&gt;, D: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.DerefMut.html' title='core::ops::DerefMut'>DerefMut</a>&lt;Target=<a class='struct' href='../amethyst_ecs/struct.MaskedStorage.html' title='amethyst_ecs::MaskedStorage'>MaskedStorage</a>&lt;T&gt;&gt;, T: <a class='trait' href='../amethyst_ecs/trait.Component.html' title='amethyst_ecs::Component'>Component</a></span></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Type-1' class='type'><code>type <a href='../amethyst_ecs/trait.Join.html#associatedtype.Type' class='type'>Type</a> = &amp;'a mut T</code></h4>
+<div class='docblock'><p>Type of joined components.</p>
+</div><h4 id='associatedtype.Value-1' class='type'><code>type <a href='../amethyst_ecs/trait.Join.html#associatedtype.Value' class='type'>Value</a> = &amp;'a mut T::<a class='trait' href='../amethyst_ecs/trait.Component.html' title='amethyst_ecs::Component'>Storage</a></code></h4>
+<div class='docblock'><p>Type of joined storages.</p>
+</div><h4 id='associatedtype.Mask-1' class='type'><code>type <a href='../amethyst_ecs/trait.Join.html#associatedtype.Mask' class='type'>Mask</a> = &amp;'a BitSet</code></h4>
+<div class='docblock'><p>Type of joined bit mask.</p>
+</div><h4 id='method.open-1' class='method'><code>fn <a href='../amethyst_ecs/trait.Join.html#tymethod.open' class='fnname'>open</a>(self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a>&amp;'a mut <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;::<a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Mask</a>, &amp;'a mut <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;::<a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Value</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<div class='docblock'><p>Open this join by returning the mask and the storages.</p>
+</div><h4 id='method.get-2' class='method'><code>unsafe fn <a href='../amethyst_ecs/trait.Join.html#tymethod.get' class='fnname'>get</a>(v: &amp;mut &amp;'a mut <a class='struct' href='../amethyst_ecs/struct.Storage.html' title='amethyst_ecs::Storage'>Storage</a>&lt;T,&nbsp;A,&nbsp;D&gt;::<a class='trait' href='../amethyst_ecs/trait.Join.html' title='amethyst_ecs::Join'>Value</a>, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>) -&gt; &amp;'a mut T</code></h4>
+<div class='docblock'><p>Get a joined component value by a gien index.</p>
+</div><h4 id='method.iter-1' class='method'><code>fn <a href='../amethyst_ecs/trait.Join.html#method.iter' class='fnname'>iter</a>(self) -&gt; <a class='struct' href='../amethyst_ecs/struct.JoinIter.html' title='amethyst_ecs::JoinIter'>JoinIter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Create a joined iterator over the contents.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_ecs";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

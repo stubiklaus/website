@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["FragmentImpl","An enum with variants representing concrete `Fragment` types compatible with different backends."]],"struct":[["Fragment","A wraper around `Fragment` required to hide all platform specific code from the user."],["Renderer","A wraper around `VideoContext` required to hide all platform specific code from the user."]]});
